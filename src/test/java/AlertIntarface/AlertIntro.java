@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import utils.BrowserUtils;
 
 import java.time.Duration;
@@ -45,6 +46,8 @@ public class AlertIntro {
         alertButton1.click();
         Alert alert=driver.switchTo().alert();
         Assert.assertEquals(alert.getText(),"I am a JS Confirm");
+        //SoftAssert softAssert=new SoftAssert();
+        //softAssert.assertEquals(alert.getText().trim(),"I am a JS Confirm","There is a comparison problem");
         alert.dismiss();
 
         WebElement message= driver.findElement(By.cssSelector("#result"));

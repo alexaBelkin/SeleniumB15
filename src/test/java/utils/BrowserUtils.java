@@ -1,11 +1,12 @@
 package utils;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 
 public class BrowserUtils{
@@ -60,15 +61,27 @@ public class BrowserUtils{
             }
         }
     }
-    public static void switchByTitle(WebDriver driver,String title){
-        Set<String> allPagesId=driver.getWindowHandles();
-        for(String id:allPagesId){
+    public static void switchByTitle(WebDriver driver,String title) {
+        Set<String> allPagesId = driver.getWindowHandles();
+        for (String id : allPagesId) {
             driver.switchTo().window(id);
-            if(driver.getTitle().contains(title)){
+            if (driver.getTitle().contains(title)) {
                 break;
             }
         }
-
     }
+
+        public static void getScreenShot(WebDriver driver,String packageName){
+            File file=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            String location=System.getProperty("src/test/java/"+packageName+"/");
+            try{
+                FileUtils.copyFile(file,new File(location+System.currentTimeMillis()));
+            }catch (IOException e){
+
+                throw new RuntimeException();
+
+            }
+
+        }
 
 }

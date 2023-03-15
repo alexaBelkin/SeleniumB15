@@ -2,6 +2,7 @@ package SoftAssertPackage;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class SoftAssertIntro {
     public int getSum(int num1, int num2){
@@ -18,4 +19,15 @@ public class SoftAssertIntro {
 
     }
 
+    @Test
+    public void test2(){
+        SoftAssert softAssert=new SoftAssert();
+        softAssert.assertEquals(getSum(1,6),7);
+        System.out.println("test1");
+        softAssert.assertEquals(getSum(3,7),12);
+        System.out.println("test2");
+        softAssert.assertEquals(getSum(5,3),14);
+        System.out.println("test3");
+        softAssert.assertAll();
+    }
 }
