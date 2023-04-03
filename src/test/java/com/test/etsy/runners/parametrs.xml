@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="EtsySearch">
+    <test name="EtsyTest">
+        <parameter name="text" value="iphone 13 case"> </parameter>
+        <parameter name="phone" value="iphone"></parameter>
+        <parameter name="generation" value="13"></parameter>
+        <parameter name="case" value="case"></parameter>
+        <classes>
+            <class name="com.test.etsy.tests.MainTest"></class>
+        </classes>
+    </test>
+
+</suite>

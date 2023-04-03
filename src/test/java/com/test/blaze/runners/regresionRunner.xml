@@ -1,14 +1,25 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Regression Suit">
-    <test name="Blaze Test">
+<!--    <test name="Blaze Test">-->
+<!--        <parameter name="laptopBrand" value="MacBook Pro"></parameter>-->
+<!--        <parameter name="laptopPrice" value="$1100 *includes tax"></parameter>-->
+<!--        <parameter name="productMessage" value="Product added"></parameter>-->
+<!--        <parameter name="description" value="Apple has introduced three new"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.test.blaze.tests.Steps"> </class>-->
+<!--            <class name="com.test.blaze.tests.OrderTest"> </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="BankTests">-->
+<!--        <classes>-->
+<!--            <class name="com.test.bank.tests.ManagerTest"> </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="EtsyTest">
+        <parameter name="text" value="iphone 13 case"> </parameter>
+
         <classes>
-            <class name="com.test.blaze.tests.Steps"> </class>
-            <class name="com.test.blaze.tests.OrderTest"> </class>
-        </classes>
-    </test>
-    <test name="BankTests">
-        <classes>
-            <class name="com.test.bank.tests.ManagerTest"> </class>
+            <class name="com.test.etsy.tests.MainTest"></class>
         </classes>
     </test>
         
